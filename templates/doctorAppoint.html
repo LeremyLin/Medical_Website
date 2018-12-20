@@ -1,0 +1,127 @@
+$def with (resultList)
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>MyAppoint</title>
+<link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+/* Border styles */
+table thead, table tr {
+border-top-width: 5px;
+border-top-style: solid;
+border-top-color: #FFEC8B	
+}
+table {
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #FFEC8B	
+}
+
+/* Padding and font style */
+table th {
+padding: 10px 50px;
+font-size: 30px;
+font-family: Verdana;
+color: #FF7F24;
+}
+
+table td {
+padding: 10px 50px;
+font-size: 20px;
+font-family: Verdana;
+color: #FF7F24;
+}
+
+/* Alternating background colors */
+table tr:nth-child(even) {
+background: #FFEC8B	
+}
+table tr:nth-child(odd) {
+background: #FFF
+}
+</style>
+</head>
+<body>
+<div class="header-bg">
+	<div class="wrap"> 
+		<div class="total-box">
+				<div class="total">
+					<div class="header_top">
+				     	<div class="menu">
+				     		<ul>
+						    	<li><a href="doctorHome">Home</a></li>
+						    	<div class="clear"></div>
+			     			</ul>
+				     	</div>
+				     	<ul class="follow_icon">
+							<a href="mainPage" class="btn btn-primary1"><span>logout</span><img src="../static/images/more_arrow.png" alt=""></a>
+						</ul>
+		     			<div class="clear"></div>
+		     	</div>
+			     <div class="header-bottom">
+					 <div class="logo">
+						<h1><a href="doctorAppoint">Time Table</a></h1>
+					 </div>
+					<div class="search">
+						  <div class="header-bottom"><p>Hello, $context.get('dname')</p></div>
+					</div>
+					<div class="clear"></div> 
+				</div>
+			</div>	
+		</div>
+	 </div>
+</div>
+	<div class="banner-box">
+		<div class="wrap">
+			<div class="main-top">
+			    <div class="section group">
+				<div class="col span_2_of_3">
+
+				  	<h3>My Appointment</h3>
+					   
+					<table>
+						<thead>
+							<th>Ptient_name</th>
+							<th>Patient_id</th>
+							<th>Gender</th>
+							<th>Action</th>
+						</thead>
+						$if resultList:
+							$for item in resultList:
+							
+							<tr>
+								<td>$item.Name</td>
+								<td>$item.pid</td>
+								<td>$item.Gender</td>
+								<td><a href="dealDoctor" type="button" >Click to remove</a><td>
+							</tr>
+						$else:
+							
+					   </table> 
+				  </div>
+  				
+				</div>
+				<div class="col span_1_of_3">
+					
+				</div>
+				 <div class="clear"></div> 
+			  
+				</div>
+			</div>
+		</div>
+		<div class="wrap">
+		    <div class="copy-right">
+				<p>Copyright &copy; 2018.Workshop made by Leremy and Griffin.</p>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
+
+    	
+    	
+            

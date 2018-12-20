@@ -1,0 +1,78 @@
+$def with (todos)
+
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="../static/css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<script>
+          function validate() {
+              var pwd1 = document.getElementById("pwd1").value;
+              var pwd2 = document.getElementById("pwd2").value;
+		<!--check your password -->
+              if(pwd1 == pwd2) {
+                  document.getElementById("warn").innerHTML="<font color='green'>CORRECT</font>";
+                  document.getElementById("submit").disabled = false;
+              }
+              else {
+                  document.getElementById("warn").innerHTML="<font color='red'>No match!</font>";
+                document.getElementById("submit").disabled = true;
+              }
+          }
+      </script>
+
+	<div class="main">
+		<div class="total">
+					<div class="header_top">
+				     	<ul class="follow_icon">
+							<a href="login" class="btn btn-primary1"><span>Back to login</span><img src="../static/images/more_arrow.png" alt="login"></a>
+						</ul>
+		     			<div class="clear"></div>
+					</div>
+		<div class="header" >
+			<h1>Create a Free Account!</h1>
+		</div>
+		<p>Input your information and <span style="color:red">we will provide an ID for after creation</span> </p>
+			<form method="post" action="add">
+				<ul class="left-form">
+					<h2>New Account:</h2>
+					<li>
+						<input type="text"   placeholder="Username" name="name" />
+						<a href="#" class="icon ticker"> </a>
+						<div class="clear"> </div>
+					</li> 
+					<h3>Gender</h3>
+					<li>
+						<input type="radio" name="sex" value="male">Male<br>
+						<input type="radio" name="sex" value="female">Female
+						
+						<div class="clear"> </div>
+					</li> 
+					
+						<div class="clear"> </div>
+					</li> 
+					
+				</ul>
+				<ul class="right-form">
+					<div>
+					<h3>Password</h3>
+					<li>Please input your password£º
+					<input  required="true" missingMessage="password" size="20" type="password" name="password" id="pwd1"></input></li>
+					<div class="clear"> </div>
+					<li>Please input your password again£º<input class="easyui-validatebox" required="true" missingMessage="check your password" size="20" type="password" name="passwd" id="pwd2" onkeyup="validate()"/><span id="warn"></span></input></li>
+						<h4>Please remember your password!</h4>
+							<input type="submit" onClick="myFunction()" value="Create Account">
+						<div class="clear"> </div>
+					</div>
+					<div class="clear"> </div>
+				</ul>
+				<div class="clear"> </div>
+					
+			</form>
+		</div>	
+		</div>
+</body>
+</html>

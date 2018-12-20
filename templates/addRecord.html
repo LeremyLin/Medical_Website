@@ -1,0 +1,64 @@
+$def with (todos)
+
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="../static/css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="main">
+		<div class="total">
+					<div class="header_top">
+				     	<ul class="follow_icon">
+							<a href="doctorHome" class="btn btn-primary1"><span>Back to main page</span><img src="../static/images/more_arrow.png" alt="login"></a>
+						</ul>
+		     			<div class="clear"></div>
+		</div>
+		<div class="header" >
+			<h1>Add a medical recored for patient</h1>
+		</div>
+		<p>Input your infomation and create a new medical record </p>
+			<form method="post" action="add2">
+				<ul class="left-form">
+					<h2>Patient ID</h2>
+					<li>
+						<input type="text"   placeholder="patient id" name="pid" />
+						<a href="#" class="icon ticker"> </a>
+						<div class="clear"> </div>
+					</li> 
+					
+					<h3>Diagnose</h3>
+					<li>
+						<input type="text"   placeholder="diagnose" name="diagnose" />
+						<a href="#" class="icon ticker"> </a>
+						<div class="clear"> </div>
+					</li> 
+					
+						<div class="clear"> </div>
+				
+					
+				</ul>
+				<ul class="right-form">
+					<div>
+					<h3>Prescription</h3>
+					<li>
+						<input type="text"   name="prescription" placeholder="prescription" required/>
+						<a href="#" class="icon into"> </a>
+					</li> 
+					<div class="clear"> </div>
+					
+						<h4></h4>
+							<input type="submit" onClick="myFunction()" value="Create Record">
+						<div class="clear"> </div>
+					</div>
+					<div class="clear"> </div>
+				</ul>
+				<div class="clear"> </div>
+					
+			</form>
+			
+		</div>
+</body>
+</html>

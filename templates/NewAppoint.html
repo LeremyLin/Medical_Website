@@ -1,0 +1,157 @@
+$def with (resultList)
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Make an appointment to doctor</title>
+<link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+/* Border styles */
+table thead, table tr {
+border-top-width: 5px;
+border-top-style: solid;
+border-top-color: #FFEC8B	
+}
+table {
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #FFEC8B	
+}
+
+/* Padding and font style */
+table th {
+padding: 10px 50px;
+font-size: 30px;
+font-family: Verdana;
+color: #FF7F24;
+}
+
+table td {
+padding: 10px 50px;
+font-size: 20px;
+font-family: Verdana;
+color: #FF7F24;
+}
+
+/* Alternating background colors */
+table tr:nth-child(even) {
+background: #FFEC8B	
+}
+table tr:nth-child(odd) {
+background: #FFF
+}
+
+
+a.button{ background-color:orange 
+}
+
+a.button:hover{background-color:yellow}
+
+
+</style>
+</head>
+<body>
+<div class="header-bg">
+	<div class="wrap"> 
+		<div class="total-box">
+				<div class="total">
+					<div class="header_top">
+				     	<div class="menu">
+				     		<ul>
+						    	<li><a href="patientHome">Home</a></li>
+						    	<div class="clear"></div>
+			     			</ul>
+				     	</div>
+				     	<ul class="follow_icon">
+							<a href="mainPage" class="btn btn-primary1"><span>logout</span><img src="../static/images/more_arrow.png" alt=""></a>
+						</ul>
+		     			<div class="clear"></div>
+		     	</div>
+			     <div class="header-bottom">
+					 <div class="logo">
+						<h1><a href="NewAppoint">APPOINTMENT</a></h1>
+					 </div>
+					<div class="search">
+						<form method="GET" action="NewAppoint">
+						   		<h1>Search the doctor (id):</h1>
+						    	<input type="text"  name="did">
+						    	<input type="submit" value="">
+						</form>
+						<form method="GET" action="dealDepart">
+							Department &nbsp&nbsp
+							<select name="department"  style="height:30px;">   
+								<option value="Nursing" Name="Nursing" >Nursing</option>   
+								<option value="Delivery" Name="Delivery" >Delivery</option>
+								<option value="Emergency" Name="Emergency">Emergency</option> 
+								<option value="Surgery" Name="Surgery">Surgery</option> 
+								<option value="Dermatology" Name="Dermatology">Dermatology</option>
+								<option value="Pediatrics" Name="Pediatrics">Dermatology</option>  
+							</select> 
+							<input type="submit" value=""  style="height:30px;">
+						</form>
+						   <div class="header-bottom"><p>Hello, $context.get('pname')</p></div>
+					</div>
+					<div class="clear"></div> 
+				</div>
+			</div>	
+		</div>
+	 </div>
+</div>
+	
+		<div class="main-bottom">
+			<div class="wrap">
+			<div class="content-bottom">
+				<div class="col_1_of_3 span_1_of_3">
+					
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<h3></h3>
+					<table>
+						<thead>
+							<th>Doctor_name</th>
+							<th>Department</th>
+							<th>Status</th>
+							<th>Action</th>
+						</thead>
+						$if resultList:
+							$for item in resultList:
+							
+								<tr>
+								<td>$item.dName</td><td>$item.department</td>
+								$if item.status==0:
+									<td>Free<td>
+									<a href="/deal/$item.did" type="button" class="button">Register</a>
+								$else:
+									<td>Busy</td>
+									<td>Forbidden_add</td>
+								</tr>
+						$else:
+						
+						
+					   </table> 
+						
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<h3></h3>
+								
+					
+				</div>
+				<div class="clear"></div> 
+			</div>
+			</div>
+		</div>
+	    <div class="wrap">
+		    <div class="copy-right">
+				<p>Copyright &copy; 2018.Workshop made by Leremy and Griffin.</p>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
+
+    	
+    	
+            

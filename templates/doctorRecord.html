@@ -1,0 +1,132 @@
+$def with (resultList)
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>pRecord</title>
+<link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+/* Border styles */
+table thead, table tr {
+border-top-width: 5px;
+border-top-style: solid;
+border-top-color: #FFEC8B	
+}
+table {
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #FFEC8B	
+}
+
+/* Padding and font style */
+table th {
+padding: 10px 80px;
+font-size: 50px;
+font-family: Verdana;
+color: #FF7F24;
+}
+
+table td {
+padding: 10px 50px;
+font-size: 20px;
+font-family: Verdana;
+color: #FF7F24;
+}
+
+/* Alternating background colors */
+table tr:nth-child(even) {
+background: #FFEC8B	
+}
+table tr:nth-child(odd) {
+background: #FFF
+}
+</style>
+</head>
+<body>
+<div class="header-bg">
+	<div class="wrap"> 
+		<div class="total-box">
+				<div class="total">
+					<div class="header_top">
+				     	<div class="menu">
+				     		<ul>
+						    	<li><a href="doctorHome">Home</a></li>
+						    	<div class="clear"></div>
+			     			</ul>
+				     	</div>
+				     	<ul class="follow_icon">
+							<a href="mainPage" class="btn btn-primary1"><span>logout</span><img src="../static/images/more_arrow.png" alt=""></a>
+						</ul>
+		     			<div class="clear"></div>
+		     	</div>
+			     <div class="header-bottom">
+					 <div class="logo">
+						<h1><a href="doctorRecored">Patient Record</a></h1>
+					 </div>
+					<div class="search">
+						   <form method="GET" action="doctorRecord">
+						   		<h1>Search the patient (id):</h1>
+						    	<input type="text"  name="pid">
+						    	<input type="submit" value="">
+						  </form>
+						  <a href="addRecord" class="btn btn-primary"><span>Create New Record</span><img src="../static/images/more_arrow.png" alt=""></a>
+					</div>
+					<div class="clear"></div> 
+				</div>
+			</div>	
+		</div>
+	 </div>
+</div>
+	
+		<div class="main-bottom">
+			<div class="wrap">
+			<div class="content-bottom">
+				<div class="col_1_of_3 span_1_of_3">
+					
+					
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					 <table>
+						<thead>
+							<th>Time</th>
+							<th>Diagnose</th>
+							<th>Prescription</th>
+						</thead>
+						$if resultList:
+							$for item in resultList:
+							
+							<tr>
+							<td>$item.time</td><td>$item.diagnose</td><td>$item.prescription</td>
+							</tr>
+						$else:
+							
+					   </table> 
+					
+									
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<h3></h3>
+								<div class="latest-news-grid">
+									
+									<div class="clear"> </div>
+								</div>
+				</div>
+				<div class="clear"></div> 
+			</div>
+			</div>
+		</div>
+	    <div class="wrap">
+		    <div class="copy-right">
+				<p>Copyright &copy; 2018.Workshop made by Leremy and Griffin.</p>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
+
+    	
+    	
+            

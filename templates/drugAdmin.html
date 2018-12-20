@@ -1,0 +1,88 @@
+$def with (resultList)
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Drug(Admin)</title>
+<link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="header-bg">
+	<div class="wrap"> 
+		<div class="total-box">
+				<div class="total">
+					<div class="header_top">
+				     	<div class="menu">
+				     		<ul>
+						    	<li><a href="adminHome">Home</a></li>
+						    	<div class="clear"></div>
+			     			</ul>
+				     	</div>
+				     	<ul class="follow_icon">
+							<a href="mainPage" class="btn btn-primary1"><span>logout</span><img src="../static/images/more_arrow.png" alt=""></a>
+						</ul>
+		     			<div class="clear"></div>
+		     	</div>
+			     <div class="header-bottom">
+					 <div class="logo">
+						<h1><a href="drugAdmin">Drug Storehouse</a></h1>
+					 </div>
+					<div class="search">
+					<form method="GET" action="drugAdmin">
+						   		<h1>Search the drug name:</h1>
+						    	<input type="text"  name="drugName">
+						    	<input type="submit" value="">
+					</form>
+						<div class="header-bottom"><p>Hello, $context.get('aName')</p></div>
+					</div>
+					<div class="clear"></div> 
+				</div>
+			</div>	
+		</div>
+	 </div>
+</div>
+	<div class="banner-box">
+		<div class="wrap">
+			<div class="main-top">
+			   <div class="heading3">
+				  	<h3>Edit or View the drug you like.</h3>
+				</div>
+				<div class="section group">
+				
+					$for item in resultList:
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="images/t-pic13.jpg" class="swipebox" title="Image Title"> <img src="../static/images/pic13.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>$item.drugName</h4>
+						<p>Drug ID:$item.drugID</P>
+						<p>Amount:$item.amount<p>
+						
+					</div>
+			
+		   		</div>	
+		   		<div class="section group">
+					
+					<div class="clear"><center></center></div> 
+		   		</div>	
+			</div>
+		<form method="GET" action="drugAdmin">
+		<br>Input the drug ID: <input type="text" name="drugId" placeholder="Drug ID">
+		<br>
+		<br>Input Editing amount(+:add,-:deduct): <input type="text" name="drugAmount" placeholder="Drug Amount"> 
+		<input type="submit" value="Edit">
+		</form>	
+		</div>
+		 
+		<div class="wrap">
+		    <div class="copy-right">
+				<p>Copyright &copy; 2018.Workshop made by Leremy and Griffin.</p>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
+
+    	
+    	
+            
